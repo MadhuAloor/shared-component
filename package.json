@@ -1,0 +1,11 @@
+{
+    "name": "sharing-component",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+    },
+    "bit": {
+        "defaultScope": "sharing-component.component-collection"
+      }   
+  }
+  
