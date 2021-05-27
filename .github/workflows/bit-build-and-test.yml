@@ -28,13 +28,16 @@ jobs:
         run: sudo npm i -g @teambit/bvm
       - name: Install bit
         run: bvm install
+      - name: Add bit to global path
+        run: export PATH=$HOME/bin:$PATH
+      - name: Check bit version
+        run: bit --version
       - name: Bit build & Bit test
         run: |
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
           bit config 
-          bit --version
           bit import
           bit status
           bit test
