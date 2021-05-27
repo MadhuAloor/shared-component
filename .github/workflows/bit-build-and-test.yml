@@ -29,9 +29,9 @@ jobs:
       - name: Install bit  
         run: bvm install
       - name: Add bit to global path
-        run: export PATH=$HOME/bin:$PATH
-      - name: Check bit version
-        run: bit --version
+        run: echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
+      - name: Check bvm version
+        run: bvm --version
       - name: Bit build & Bit test
         run: |
           bit config set analytics_reporting false
