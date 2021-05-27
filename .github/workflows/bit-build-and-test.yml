@@ -25,12 +25,16 @@ jobs:
       run: bvm install
     - name: add bvm bin folder to path
       run: echo "$HOME/bin" >> $GITHUB_PATH
-    - name: Bit build & Bit test
+    - name: Bit config
       run: |
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
           bit config 
-          bit import
+    - name: Bit import
+      continue-on-error: true
+      run: bit import
+    - name: Bit status & test
+      run: | 
           bit status
           bit test
