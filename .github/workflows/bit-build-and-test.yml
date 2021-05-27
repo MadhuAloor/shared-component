@@ -24,9 +24,11 @@ jobs:
       # Install dependencies and build app
       - name: Install Dependencies
         run: npm install
-      - name: Install bit-bin
-        run: sudo npm install bit-bin -g
-      - name: Bit build & Bit test
+      - name: Install bvm
+        run: npm i -g @teambit/bvm
+      - name: Install bit
+        run: bvm install
+      - name: bit build & bit test
         run: |
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
