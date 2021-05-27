@@ -31,9 +31,11 @@ jobs:
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
           bit config 
-    - name: Bit import
+    - name: Bit install & import
       continue-on-error: true
-      run: bit import
+      run: |
+          bit install
+          bit import
     - name: Bit compile
       run: bit compile
     - name: Bit status & test
