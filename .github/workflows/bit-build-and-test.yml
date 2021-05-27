@@ -1,8 +1,8 @@
+# This is a basic workflow to help you get started with Actions
+
 name: Tag and Export Components
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -25,21 +25,12 @@ jobs:
       run: bvm install
     - name: add bvm bin folder to path
       run: echo "$HOME/bin" >> $GITHUB_PATH
-    - name: Set up bit config
+    - name: Bit build & Bit test
       run: |
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
-    - name: Install packages using bit
-      run: bit install
-    - name: Hard-tag pending components
-      run: bit tag --persist
-    - name: Export components
-      run: bit export
-    - name: Commit changes made to .bitmap
-      run: |
-        git config --global user.name '${{ github.actor }}'
-        git config --global user.email '${{ github.actor }}@users.noreply.github.com'
-        git add .bitmap
-        git commit -m "update .bitmap with new component versions (automated). --skip-ci"
-        git push
+          bit config 
+          bit import
+          bit status
+          bit test
