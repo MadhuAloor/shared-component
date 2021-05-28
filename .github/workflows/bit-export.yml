@@ -28,6 +28,8 @@ jobs:
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
+    - name: Clear cache
+      run: bit clear-cache
     - name: Install packages using bit
       run: bit install
     - name: Hard-tag pending components
