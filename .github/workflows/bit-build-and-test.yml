@@ -38,6 +38,8 @@ jobs:
           bit import
     - name: Bit compile
       run: bit compile
+    - name: Bit link
+      run: bit link
     - name: Bit status & test
       run: | 
           bit status
