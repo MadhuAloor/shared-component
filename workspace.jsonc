@@ -10,7 +10,7 @@
     /**
      * the name of the component workspace. used for development purposes.
      **/
-    "name": "my-workspace-name",
+    "name": "shared-component",
     /**
      * set the icon to be shown on the Bit server.
      **/
@@ -37,9 +37,19 @@
      */
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
-      "dependencies": {},
-      "peerDependencies": {}
-    }
+      "dependencies": {
+        "@testing-library/react": "11.2.7"
+      },
+      "peerDependencies": {
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
+      }
+    },
+    "packageManagerArgs": [],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
+    "strictPeerDependencies": true
   },
   /**
    * workspace variants allow to set different subsets of configuration for components in your workspace.
@@ -51,10 +61,7 @@
      * "*" is a special rule which applied on all components in the workspace.
      **/
     "*": {
-      /**
-       * uncomment to apply the react environment on all components.
-       **/
-      // "teambit.react/react": { }
+      "teambit.react/react": {}
     }
   }
 }
