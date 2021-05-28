@@ -5,17 +5,17 @@ export type ButtonProps = {
    * a text to be rendered in the component.
    */
   text: string
-  message: string
+  optionalMessage: string
 };
 
-export function Button({ text, message='' }: ButtonProps) {
+export function Button({ text, optionalMessage='' }: ButtonProps) {
   return (
     <div>
       <div>
         {text}
       </div>
       <div>
-        {message}
+        {optionalMessage}
       </div>
     </div>
   );
