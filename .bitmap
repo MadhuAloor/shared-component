@@ -3,7 +3,7 @@
 {
     "ui/button": {
         "scope": "sharing-component.component-collection",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "my-scope/ui/button"
     },
